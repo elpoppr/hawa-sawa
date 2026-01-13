@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+        // ⚠️ مهم: Base URL لـ GitHub Pages
+        base: '/هاوا-ساوا/',
+        
         server: {
             port: 3000,
             host: '0.0.0.0',
@@ -17,6 +20,15 @@ export default defineConfig(({ mode }) => {
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, '.'),
+            }
+        },
+        // ⚠️ أضف لمعالجة الـ 404
+        build: {
+            outDir: 'dist',
+            rollupOptions: {
+                input: {
+                    main: path.resolve(__dirname, 'index.html')
+                }
             }
         }
     };
