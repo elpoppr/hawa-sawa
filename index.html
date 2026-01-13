@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#020617">
+    <title>هوا سوا - Hawa Sawa Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { -webkit-tap-highlight-color: transparent; user-select: none; }
+        body { font-family: 'Cairo', sans-serif; background-color: #020617; color: white; overflow: hidden; margin: 0; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        @keyframes slideIn { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .animate-chat { animation: slideIn 0.3s ease-out forwards; }
+        .pattern-dots { background-image: radial-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px); background-size: 24px 24px; }
+        main { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        textarea { user-select: text !important; }
+    </style>
+    <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js"></script>
+    <script>
+        // ⚡ تهيئة Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyB_ezKMjDicTpc2pw-hi0eY3CXjRn1uXP4",
+            authDomain: "chatappproject-bca46.firebaseapp.com",
+            databaseURL: "https://chatappproject-bca46-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "chatappproject-bca46",
+            storageBucket: "chatappproject-bca46.firebasestorage.app",
+            messagingSenderId: "493744253937",
+            appId: "1:493744253937:web:3d476495b6d83ebbd5f250"
+        };
+        
+        try {
+            const app = firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+            window.firebaseApp = app;
+            window.firebaseDatabase = database;
+            console.log("✅ Firebase جاهز");
+        } catch (error) {
+            console.error("❌ خطأ في Firebase:", error);
+        }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

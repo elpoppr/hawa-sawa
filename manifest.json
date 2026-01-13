@@ -1,0 +1,18 @@
+
+{
+  "short_name": "هوا سوا",
+  "name": "هوا سوا - Hawa Sawa Chat",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/5962/5962463.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "orientation": "portrait"
+}
